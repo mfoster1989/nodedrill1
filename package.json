@@ -8,8 +8,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.4",
     "express": "^4.16.2",
-    "node": "^9.1.0"
+    "node": "^9.1.0",
+    "nodemon": "^1.12.1"
   },
   "devDependencies": {},
   "description": ""
