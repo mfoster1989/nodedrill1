@@ -28,7 +28,7 @@ const cohorts =
 
 app.use(cors());
 
-function idQuery (id, array) {
+function idQuery (array, id) {
   for (let i = 0; i < array.length; i++) {
     if (array[i].id == id) {
       return array[i];
@@ -42,16 +42,14 @@ app.get("/", function (req, res) {
 })
 
 app.get("/:id", function (req, res) {
+  console.log(req);
   var record = idQuery(cohorts, req.params.id);
   if (!record) {
-    res.status = 404;
-    res.json({
-      error: {
+    res.status(404).json({
         message: "No record found!"
-      }
     });
   }
   res.json({array: record});
 });
 
-app.listen(3000);
+app.listen(9000);
